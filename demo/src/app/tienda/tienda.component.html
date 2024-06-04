@@ -1,50 +1,70 @@
 <html lang="es">
-<body style="background-color: rgb(46, 46, 46);">
+<body style="background-color: rgb(46, 46, 46); height: 800px;">
     <div class="container-fluid">
-
         <div class="row Encabezado barraEncabezado" style="padding-top: 1%;">
             <div class="col-2">
                 <h3 class="textoEncabezado" style=" margin-left: 100px;">{{nombrePag}}</h3>    
             </div>
             <div class="col-1">
                 <a href="/tienda">
-                    <h4 class="textoEncabezado">{{tienda}}</h4>
+                    <h4 class="textoEncabezado textoNav">{{tienda}}</h4>
                 </a>     
             </div>
             <div class="col-1">  
                 <a href="/tienda">
-                    <h4 class="textoEncabezado">{{noticias}}</h4>
+                    <h4 class="textoEncabezado textoNav">{{noticias}}</h4>
                 </a>
             </div>
             <div class="col-1">
                 <a href="/tienda">
-                    <h4 class="textoEncabezado">{{soporte}}</h4>
+                    <h4 class="textoEncabezado textoNav">{{soporte}}</h4>
+                </a>          
+            </div>
+            <div class="col-4">
+                <a href="/tienda">
+                    <h4 class="textoEncabezado textoNav">{{acerca}}</h4>
                 </a>          
             </div>
             <div class="col-3">
                 <a href="/tienda">
-                    <h4 class="textoEncabezado">{{acerca}}</h4>
-                </a>          
-            </div>
-            <div class="col-3">
-                <a href="/tienda">
-                    <h4 class="textoEncabezado">Usuario</h4>
+                    <h4 class="textoEncabezado textoNav">Usuario</h4>
                 </a>
             </div>
         </div> 
         
-        <div class="row" style="height: 50px; margin-top: 6%;">
-            <div class="col-2">
+        <div class="row" style="height: 50px; padding: 4%; ">
+            <div class="col-2" style="margin-top: 1%;">
                 <h4>Categorias</h4>
             </div>
 
-            <div class="col-8"> 
-                <div class="row">              
-                    <span>{{destacado}}</span>
+            <div class="col-8" style="background-color: rgb(19, 19, 19); "> 
+                <div class="row" style="margin-top: 2%;">
+                    <div class="col-7"></div>
+                    <div class="col-5">
+                        <form class="form-inline my-2 my-lg-0 search-container">
+                            <input class="form-control mr-sm-2 w-100" type="search" placeholder="Buscar" aria-label="Buscar">
+                            <span class="search-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                  </svg>
+                            </span>
+                        </form>
+                    </div> 
                 </div>
+                    <div class="row bloqueSeparacion">  
+                        <span class="textoEncabezado" style="font-size: 25px; padding: 1%;">{{destacado}}</span>
+                    </div>
+                    <div>
+                        <article class="articleDestacado">
+                            <img  src="https://i.ibb.co/wLnMZsH/nuevo-Call-of-Duty.jpg"/>
+                            <img  src="https://i.ibb.co/GdmFfP6/characters-ghost.png"/>
+                        </article>
+                    </div>
+                    <div class="row bloqueSeparacion">  
+                        <span class="textoEncabezado" style="font-size: 25px; padding: 1%;">{{ofertas}}</span>
+                    </div>
             </div>
-
-            <div class="col-2">
+            <div class="col-2" style="margin-top: 1%;">
                 
             </div>
         </div>

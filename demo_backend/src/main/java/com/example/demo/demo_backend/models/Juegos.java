@@ -8,29 +8,28 @@ import java.util.Date;
 
 @Getter
 @Entity
-@Table(name = "comentarios_usuarios")
+@Table(name = "juegos")
 @NoArgsConstructor
-public class comentarios_usuarios {
+public class Juegos {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
     private long id;
 
     @Setter
-    @Column(name="descripcion")
-    private String descripcion;
+    @Column(name="nombre")
+    private String nombre;
 
     @Setter
-    @Column(name="fecha")
-    private Date fecha;
+    @Column(name="fecha_lanzamiento")
+    private Date fecha_lanzamiento;
+
+    @Setter
+    @Column(name="valoracion")
+    private long valoracion;
 
     @Setter
     @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "usuario_escritor_id")
-    private usuarios usuario_escritor_id;
-
-    @Setter
-    @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "usuario_receptor_id")
-    private usuarios usuario_receptor_id;
+    @JoinColumn(name = "desarrollador_id")
+    private Desarrolladores desarrollador_id;
 }

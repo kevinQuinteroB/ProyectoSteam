@@ -11,4 +11,6 @@ export class TiendaComponent {
   tienda = 'Tienda'
   soporte = 'Soporte'
   acerca = 'Nosotros'
+  destacado = 'Destacado'
+  ofertas = 'Ofertas'
 }

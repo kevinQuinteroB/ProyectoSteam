@@ -10,7 +10,7 @@ import lombok.Setter;
 @Table(name = "usuarios")
 @NoArgsConstructor
 
-public class usuarios {
+public class Usuarios {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
@@ -35,4 +35,9 @@ public class usuarios {
     @Setter
     @Column(name="activo")
     private boolean activo;
+
+    @Setter
+    @ManyToOne(fetch =FetchType.LAZY)
+    @JoinColumn(name = "pais_id")
+    private Paises pais_id;
 }
