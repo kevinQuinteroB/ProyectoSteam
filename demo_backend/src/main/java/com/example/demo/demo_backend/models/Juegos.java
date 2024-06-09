@@ -17,12 +17,16 @@ public class Juegos {
     private long id;
 
     @Setter
-    @Column(name="nombre")
+    @Column(name="nombre", nullable = false, unique = true)
     private String nombre;
 
     @Setter
-    @Column(name="fecha_lanzamiento")
+    @Column(name="fecha_lanzamiento", nullable = false)
     private Date fecha_lanzamiento;
+
+    @Setter
+    @Column(name="portada", nullable = false, unique = true)
+    private String portada;
 
     @Setter
     @Column(name="valoracion")

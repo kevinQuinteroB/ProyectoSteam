@@ -30,7 +30,7 @@ public class Precios {
     private long descuento;
 
     @Setter
-    @Column(name = "precio")
+    @Column(name = "precio", nullable = false)
     private long precio;
 
     @Setter

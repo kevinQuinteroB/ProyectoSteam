@@ -1,3 +1,4 @@
+
 .bloqueSeparacion{
   background-color: rgb(26, 26, 26);
   margin-top: 1%;
@@ -9,7 +10,7 @@
 }
 .textoNav:hover{ /* Color dorado al iluminar */
   color: #ffffff;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
 }
 .textoEncabezado{
     color: rgb(186, 186, 186);
@@ -117,4 +118,51 @@ a {
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   appearance: none;
+}
+
+.ofertas{
+  display: flex;
+  height: 300px;
+  overflow: visible;
+}
+
+.ofertas img{
+  width: 0;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .5;
+  transition: .5s ease;
+  position: relative;
+}
+
+.ofertas img:hover{
+  width: 120px;
+  opacity: 1;
+  position: relative;
+  filter: contrast(120%);
+  transform: scaleY(110%);
+}
+
+.festi{
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.festi:hover{
+  transition: all .3s ease;
+  transform: scale(105%);
+  filter: brightness(250%);
+}
+
+.imagenFree{
+  width: 100%;
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.imagenFree:hover{
+  transition: all .3s ease;
+  transform: scale(105%);
+  filter: brightness(150%);
 }

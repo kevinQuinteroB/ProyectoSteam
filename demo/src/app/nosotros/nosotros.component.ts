@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-tienda',
-  templateUrl: './tienda.component.html',
-  styleUrl: './tienda.component.css'
+  selector: 'app-nosotros',
+  templateUrl: './nosotros.component.html',
+  styleUrl: './nosotros.component.css'
 })
-export class TiendaComponent {
+export class NosotrosComponent {
   nombrePag = 'Virtual Vault'
   noticias = 'Noticias'
   tienda = 'Tienda'

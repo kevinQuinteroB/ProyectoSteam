@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrl: './recuperarcontrasena.component.css'
 })
 export class RecuperarcontrasenaComponent {
-  nombrePag = 'FullPlay'
+  nombrePag = 'Virtual Vault'
   noticias = 'Noticias'
   tienda = 'Tienda'
   soporte = 'Soporte'

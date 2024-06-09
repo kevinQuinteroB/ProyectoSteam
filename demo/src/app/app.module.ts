@@ -6,17 +6,27 @@ import { AppComponent } from './app.component';
 import { InitsesionComponent } from './initsesion/initsesion.component';
 import { TiendaComponent } from './tienda/tienda.component';
 import { RecuperarcontrasenaComponent } from './recuperarcontrasena/recuperarcontrasena.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
+import { SoporteComponent } from './soporte/soporte.component';
+import { RegistroComponent } from './registro/registro.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     InitsesionComponent,
     TiendaComponent,
-    RecuperarcontrasenaComponent
+    RecuperarcontrasenaComponent,
+    NosotrosComponent,
+    SoporteComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

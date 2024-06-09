@@ -32,4 +32,6 @@ public class ComentariosJuegos {
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name = "juegos_id")
     private Juegos juegos_id;
+
+
 }

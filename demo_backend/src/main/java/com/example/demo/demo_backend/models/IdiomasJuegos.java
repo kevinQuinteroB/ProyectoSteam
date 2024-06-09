@@ -17,7 +17,7 @@ public class IdiomasJuegos {
 
     @Setter
     @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "idioma_id")
+    @JoinColumn(name = "idioma_id", nullable = false)
     private Idiomas idioma_id;
 
     @Setter

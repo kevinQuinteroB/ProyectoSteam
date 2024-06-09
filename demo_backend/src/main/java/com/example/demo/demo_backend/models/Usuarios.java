@@ -17,27 +17,21 @@ public class Usuarios {
     private long id;
 
     @Setter
-    @Column(name="username")
+    @Column(name="username", nullable = false, unique = true)
     private String username;
 
     @Setter
-    @Column(name="email")
+    @Column(name="email", nullable = false, unique = true)
     private String email;
 
     @Setter
-    @Column(name="contrasena")
+    @Column(name="contrasena", nullable = false)
     private String contrasena;
 
     @Setter
-    @Column(name="saldo")
+    @Column(name="saldo", nullable = false)
     private double saldo;
 
     @Setter
-    @Column(name="activo")
-    private boolean activo;
-
-    @Setter
-    @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "pais_id")
-    private Paises pais_id;
+    private Long pais_id;
 }

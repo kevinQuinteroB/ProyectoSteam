@@ -18,15 +18,15 @@ public class Noticias {
     private long id;
 
     @Setter
-    @Column(name = "fecha_publicacion")
+    @Column(name = "fecha_publicacion", nullable = false)
     private Date fecha_publicacion;
 
     @Setter
-    @Column(name = "titulo")
+    @Column(name = "titulo", nullable = false)
     private String titulo;
 
     @Setter
-    @Column(name = "descripcion")
+    @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
     @Setter

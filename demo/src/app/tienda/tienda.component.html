@@ -1,9 +1,11 @@
 <html lang="es">
-<body style="background-color: rgb(46, 46, 46); height: 800px;">
+<body style="background-color: rgb(46, 46, 46); height: 1480px;">
     <div class="container-fluid">
-        <div class="row Encabezado barraEncabezado" style="padding-top: 1%;">
-            <div class="col-2">
-                <h3 class="textoEncabezado" style=" margin-left: 100px;">{{nombrePag}}</h3>    
+        <div class="row Encabezado barraEncabezado" style="padding-top: 1%; padding-bottom: 0.5%;">
+            <div class="col-3" >
+                <a>
+                    <h3 class="textoEncabezado " style=" margin-left: 100px; margin-top: -2%;">{{nombrePag}}</h3>  
+                </a>
             </div>
             <div class="col-1">
                 <a href="/tienda">
@@ -16,12 +18,12 @@
                 </a>
             </div>
             <div class="col-1">
-                <a href="/tienda">
+                <a href="/soporte">
                     <h4 class="textoEncabezado textoNav">{{soporte}}</h4>
                 </a>          
             </div>
-            <div class="col-4">
-                <a href="/tienda">
+            <div class="col-3">
+                <a href="/nosotros">
                     <h4 class="textoEncabezado textoNav">{{acerca}}</h4>
                 </a>          
             </div>
@@ -34,15 +36,18 @@
         
         <div class="row" style="height: 50px; padding: 4%; ">
             <div class="col-2" style="margin-top: 1%;">
-                <h4>Categorias</h4>
+                <div class="row" style="padding: 2%; background-color: rgb(26, 26, 26); margin-right: 20%;">
+                    <h4 class="textoEncabezado" style=" font-size: 25px;">Categorias</h4>
+                    <h4 style=" font-size: 20px;">Categoria 1</h4>
+                </div>
             </div>
 
             <div class="col-8" style="background-color: rgb(19, 19, 19); "> 
-                <div class="row" style="margin-top: 2%;">
-                    <div class="col-7"></div>
-                    <div class="col-5">
+                <div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+                    <div class="col-8"></div>
+                    <div class="col-4" style="height: fit-content;">
                         <form class="form-inline my-2 my-lg-0 search-container">
-                            <input class="form-control mr-sm-2 w-100" type="search" placeholder="Buscar" aria-label="Buscar">
+                            <input class="form-control mr-sm-2 w-100" style="height: 30px;" type="search" placeholder="Buscar" aria-label="Buscar">
                             <span class="search-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -51,20 +56,60 @@
                         </form>
                     </div> 
                 </div>
-                    <div class="row bloqueSeparacion">  
-                        <span class="textoEncabezado" style="font-size: 25px; padding: 1%;">{{destacado}}</span>
+                <div class="row bloqueSeparacion">  
+                    <span class="textoEncabezado" style="font-size: 25px; padding: 1%;">{{destacado}}</span>
+                </div>
+                <div class="row">
+                    <article class="articleDestacado">
+                        <img  src="https://i.ibb.co/wLnMZsH/nuevo-Call-of-Duty.jpg"/>
+                        <img  src="https://i.ibb.co/GdmFfP6/characters-ghost.png"/>
+                    </article>
+                </div>
+
+                <div class="row bloqueSeparacion">  
+                    <span class="textoEncabezado" style="font-size: 25px; padding: 1%;">{{ofertas}}</span>
+                </div>
+                
+                
+                <div class="row">
+                    <section class="ofertas" style="padding: 2%;">
+                        <img src="https://i.3djuegos.com/juegos/13424/red_dead_3__nombre_temporal_/fotos/ficha/red_dead_3__nombre_temporal_-5009894.webp">
+                        <img src="https://cdn.tutsplus.com/cdn-cgi/image/width=600/psd/uploads/legacy/psdtutsarticles/linkb_60vgamecovers/45.jpg">
+                        <img src="https://i.3djuegos.com/juegos/5065/grand_theft_auto_v/fotos/ficha/grand_theft_auto_v-2654943.webp">
+                        <img src="https://e1.pxfuel.com/desktop-wallpaper/562/703/desktop-wallpaper-playerunknown-s-battlegrounds-font-pubg-lover.jpg">
+                        <img src="https://i.blogs.es/9303f7/011212_bioshockinfinite/1366_2000.webp">
+                        <img src="https://i.3djuegos.com/juegos/19026/counterstrike_2/fotos/ficha/counterstrike_2-5835304.webp">
+                        <img src="https://i.3djuegos.com/juegos/8163/world_of_warcraft_mists_of_pandaria/fotos/ficha/world_of_warcraft_mists_of_pandaria-2055961.webp">
+                    </section>
+                </div>
+                
+                <div class="row bloqueSeparacion">  
+                    <span class="textoEncabezado" style="font-size: 25px; padding: 1%;">{{eventos}}</span>
+                </div>
+
+                <div>
+                    <img class="festi" src="https://img.freepik.com/vector-gratis/plantilla-banner-contraccion-videojuegos-ocio_23-2149871551.jpg?w=2000">
+                </div>
+
+                <div class="row bloqueSeparacion">  
+                    <span class="textoEncabezado" style="font-size: 25px; padding: 1%;">{{free}}</span>
+                </div>
+
+                <div class="row" style="padding: 1%; margin-bottom: 1%;">
+                    <div class="col-6">
+                        <span>
+                            <img class="imagenFree" src="https://cdn2.unrealengine.com/fortnite-na-central-server-region-3-1920x1080-8e53d35d7d26.jpg">
+                        </span>
                     </div>
-                    <div>
-                        <article class="articleDestacado">
-                            <img  src="https://i.ibb.co/wLnMZsH/nuevo-Call-of-Duty.jpg"/>
-                            <img  src="https://i.ibb.co/GdmFfP6/characters-ghost.png"/>
-                        </article>
-                    </div>
-                    <div class="row bloqueSeparacion">  
-                        <span class="textoEncabezado" style="font-size: 25px; padding: 1%;">{{ofertas}}</span>
-                    </div>
-            </div>
-            <div class="col-2" style="margin-top: 1%;">
+                    <div class="col-6">
+                        <span>
+                            <img class="imagenFree" src="https://www.rocketleague.com/images/keyart/rl_evergreen.jpg">
+                        </span>
+                    </div>                
+                </div> 
+            </div>           
+
+            <div class="col-2" style="margin-top: 1%;">   
                 
             </div>
         </div>

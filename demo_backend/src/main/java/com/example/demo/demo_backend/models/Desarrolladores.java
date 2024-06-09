@@ -16,6 +16,6 @@ public class Desarrolladores {
     private long id;
 
     @Setter
-    @Column(name="nombre")
+    @Column(name="nombre", nullable = false, unique = true)
     private String nombre;
 }

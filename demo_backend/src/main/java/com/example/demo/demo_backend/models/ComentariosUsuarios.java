@@ -33,4 +33,5 @@ public class ComentariosUsuarios {
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name = "usuario_receptor_id")
     private Usuarios usuario_receptor_id;
+
 }

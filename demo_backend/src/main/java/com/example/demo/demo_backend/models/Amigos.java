@@ -19,7 +19,7 @@ public class Amigos {
     private long id;
 
     @Setter
-    @Column(name="fecha")
+    @Column(name="fecha", nullable = false)
     private Date fecha;
 
     @Setter
@@ -31,4 +31,6 @@ public class Amigos {
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name = "usuario_id2")
     private Usuarios usuario_id2;
+
+
 }
