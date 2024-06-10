@@ -4,7 +4,7 @@
         <div class="row Encabezado barraEncabezado" style="padding-top: 1%; padding-bottom: 0.5%;">
             <div class="col-3" >
                 <a>
-                    <h3 class="textoEncabezado " style=" margin-left: 100px; margin-top: -2%;">{{nombrePag}}</h3>  
+                    <h3 class="textoEncabezado " style=" margin-left: 100px; margin-top: -1%;">{{nombrePag}}</h3>  
                 </a>
             </div>
             <div class="col-1">
@@ -28,16 +28,26 @@
                 </a>          
             </div>
             <div class="col-3">
-                <a href="/tienda">
-                    <h4 class="textoEncabezado textoNav">Usuario</h4>
-                </a>
+                <div class="dropdown">
+                    <a style="font-size: 20px;" (click)="toggleDropdown()" class="textoEncabezado textoNav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{USUARIO}}
+                    </a>
+                    <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                      <li><a class="dropdown-item" href="#">perfil</a></li>
+                      <li><a class="dropdown-item" href="#">recargar</a></li>
+                      <li><a class="dropdown-item" href="#">inventario</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">cerrar sesion</a></li>
+                    </ul>
+                  </div>
+                </div>
             </div>
         </div> 
         
         <div class="row" style="padding: 8%;">
             <div class="cms-page-content container"><h1>Soporte</h1>
                 <hr><br>
-                <strong>FullPlay, Inc.</strong><br>
+                <strong>Virtual Vault, Inc.</strong><br>
                 620 Crossroads Blvd.<br>
                 Cary, Carolina del Norte, Estados Unidos<br>
                 Telf. +57 888 000 111<br>
@@ -52,13 +62,13 @@
                 <strong>¿Ofrecéis prácticas?</strong><br>
                 Cualquier trabajo de verano o prácticas se publicará en nuestro&nbsp;portal de empleos.<br>
                 <br>
-                <strong>Somos profesionales en música/arte/captura de movimiento/testeo/monetización. ¿Podemos hablar con alguien de Fullplay sobre nuestros productos o servicios?</strong><br>
+                <strong>Somos profesionales en música/arte/captura de movimiento/testeo/monetización. ¿Podemos hablar con alguien de Virtual Vault sobre nuestros productos o servicios?</strong><br>
                 Creamos nuestros juegos internamente con la ayuda de trabajadores independientes y equipos con los que hemos establecido relaciones. En este momento no buscamos trabajadores independientes nuevos.<br>
                 <br>
                 <strong>¿Puedo crear una página de aficionados sobre un juego vuestro?</strong><br>
                 ¡Nos encantaría! Lo único que pedimos es que se siga nuestra política de contenido de aficionados.<br>
                 <br>
-                <strong>Tengo una idea muy buena para un juego o para Epic. ¿Podemos hablar sobre ella?</strong><br>
+                <strong>Tengo una idea muy buena para un juego o para Virtual Vault. ¿Podemos hablar sobre ella?</strong><br>
                 No podemos aceptar propuestas externas de ningún tipo. No nos enviéis ideas, historias, arte, niveles de juego, música, etc. Por motivos legales, no podemos revisarlos.<br>
                 <br>
                 <strong>¿Cómo puedo acceder a vuestros juegos?</strong><br>
@@ -67,14 +77,13 @@
                 <strong>¿Puedo monetizar vídeos de juego que he creado en los que se incluyen juegos vuestros?</strong><br>
                 Sí, está permitido.<br>
                 <br>
-                <strong>¿Puede FullPlay patrocinar a mi equipo en un próximo torneo?</strong><br>
+                <strong>¿Puede Virtual Vault patrocinar a mi equipo en un próximo torneo?</strong><br>
                 En este momento no ofrecemos patrocinios para competiciones de juegos ni torneos.<br>
                 <br>
                 <strong>¿FullPlay ofrece becas de escolaridad?</strong><br>
                 En este momento no ofrecemos becas de escolaridad.<br>
                 
                 </div>
-        </div>
-    </div>    
+        </div> 
 </body>
 </html>

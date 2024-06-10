@@ -30,7 +30,6 @@ public class Noticias {
     private String descripcion;
 
     @Setter
-    @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "juego_id")
-    private Juegos juego_id;
+    @Column(name = "juego_id")
+    private Long juego_id;
 }

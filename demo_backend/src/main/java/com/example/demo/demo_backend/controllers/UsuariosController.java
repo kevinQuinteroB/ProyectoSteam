@@ -17,7 +17,7 @@ public class UsuariosController {
     private UsuariosServices usuariosServices;
 
     @GetMapping("/login/{email}/{contrasena}")
-    public ResponseEntity<Object> retunUsuario(@PathVariable String email, @PathVariable String contrasena) {
+    public ResponseEntity<Usuarios> retunUsuario(@PathVariable String email, @PathVariable String contrasena) {
         return ResponseEntity.ok(usuariosServices.findUsuarioByEmail(email, contrasena));
     }
 

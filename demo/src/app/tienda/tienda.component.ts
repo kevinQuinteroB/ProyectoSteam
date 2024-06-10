@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UsuarioService } from '../usuario.service';
+import { Usuario } from '../usuario';
 
 @Component({
   selector: 'app-tienda',
@@ -15,4 +17,23 @@ export class TiendaComponent {
   ofertas = 'Ofertas'
   eventos = 'Festi Juegos'
   free = "Juegos Gratuitos"
+  USUARIO = 'USUARIO'
+  usuarioRegistrado: Usuario | null = null;
+
+  constructor(private usuarioService: UsuarioService) {}
+
+  dropdownVisible = false;
+
+  ngOnInit(): void {
+    this.usuarioRegistrado = this.usuarioService.getUsuarioRegistrado();
+    console.log(this.usuarioRegistrado);
+    if (this.usuarioRegistrado) {
+      this.USUARIO = this.usuarioRegistrado.username;
+      console.log(this.usuarioRegistrado.username);
+    }
+  }
+  
+  toggleDropdown() {
+    this.dropdownVisible = !this.dropdownVisible;
+  }
 }

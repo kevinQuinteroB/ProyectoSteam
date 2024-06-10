@@ -33,5 +33,6 @@ public class Usuarios {
     private double saldo;
 
     @Setter
+    @Column(name="pais_id", nullable = false)
     private Long pais_id;
 }

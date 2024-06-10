@@ -23,14 +23,12 @@ public class Amigos {
     private Date fecha;
 
     @Setter
-    @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "usuario_id1")
-    private Usuarios usuario_id1;
+    @Column(name = "usuario_id1")
+    private Long usuario_id1;
 
     @Setter
-    @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "usuario_id2")
-    private Usuarios usuario_id2;
+    @Column(name = "usuario_id2")
+    private Long usuario_id2;
 
 
 }

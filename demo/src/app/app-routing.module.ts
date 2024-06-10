@@ -6,6 +6,7 @@ import { RecuperarcontrasenaComponent } from './recuperarcontrasena/recuperarcon
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { SoporteComponent } from './soporte/soporte.component';
 import { RegistroComponent } from './registro/registro.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/login', pathMatch:'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'soporte', component: SoporteComponent},
   { path: 'registro', component: RegistroComponent},
+  { path: 'busqueda', component: BusquedaComponent}
 ];
 
 @NgModule({

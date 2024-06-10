@@ -4,7 +4,7 @@
         <div class="row Encabezado barraEncabezado" style="padding-top: 1%; padding-bottom: 0.5%;">
             <div class="col-3" >
                 <a>
-                    <h3 class="textoEncabezado " style=" margin-left: 100px; margin-top: -2%;">{{nombrePag}}</h3>  
+                    <h3 class="textoEncabezado " style=" margin-left: 100px; margin-top: -1%;">{{nombrePag}}</h3>  
                 </a>
             </div>
             <div class="col-1">
@@ -28,29 +28,38 @@
                 </a>          
             </div>
             <div class="col-3">
-                <a href="/tienda">
-                    <h4 class="textoEncabezado textoNav">Usuario</h4>
-                </a>
+                <div class="dropdown">
+                    <a style="font-size: 20px;" (click)="toggleDropdown()" class="textoEncabezado textoNav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{USUARIO}}
+                    </a>
+                    <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                      <li><a class="dropdown-item" href="#">perfil</a></li>
+                      <li><a class="dropdown-item" href="#">recargar</a></li>
+                      <li><a class="dropdown-item" href="#">inventario</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">cerrar sesion</a></li>
+                    </ul>
+                  </div>
+                </div>
             </div>
         </div> 
         
         <div class="row" style="padding: 8%;">
-            <div class="cms-page-content container"><h1>Acerca de FullPlay</h1>
+            <div class="cms-page-content container"><h1>Acerca de Virtual Vault</h1>
 
                 <hr><br>
-                FullPlay es una plataforma global de distribución de videojuegos fundada en 2024. Con sede en Silicon Valley, California, FullPlay se ha posicionado rápidamente como un líder en el sector del entretenimiento digital. La plataforma ofrece una vasta biblioteca de juegos, que abarca desde los títulos más populares hasta joyas independientes, proporcionando a los jugadores una experiencia de compra y juego inigualable.
-                FullPlay no solo se destaca por su extenso catálogo de juegos, sino también por su ecosistema robusto que incluye características sociales avanzadas. Los usuarios pueden conectarse con amigos, unirse a comunidades de jugadores, y participar en eventos en línea. La plataforma también ofrece recomendaciones personalizadas basadas en las preferencias y el historial de juego de los usuarios, asegurando que siempre haya algo nuevo y emocionante para descubrir.
-                FullPlay cuenta con millones de usuarios registrados y ha facilitado innumerables conexiones entre jugadores de todo el mundo. Además, la plataforma ofrece herramientas y servicios para desarrolladores, permitiéndoles distribuir y gestionar sus juegos de manera eficiente. FullPlay proporciona a los desarrolladores análisis detallados, marketing integrado y soporte técnico, ayudándolos a alcanzar una audiencia global.
-                A través de su compromiso con la innovación y la calidad, FullPlay se dedica a ofrecer una experiencia de juego excepcional, tanto para jugadores como para desarrolladores, consolidándose como un pilar fundamental en la comunidad de videojuegos.
+                Virtual Vault es una plataforma global de distribución de videojuegos fundada en 2024. Con sede en Silicon Valley, California, Virtual Vault se ha posicionado rápidamente como un líder en el sector del entretenimiento digital. La plataforma ofrece una vasta biblioteca de juegos, que abarca desde los títulos más populares hasta joyas independientes, proporcionando a los jugadores una experiencia de compra y juego inigualable.
+                Virtual Vault no solo se destaca por su extenso catálogo de juegos, sino también por su ecosistema robusto que incluye características sociales avanzadas. Los usuarios pueden conectarse con amigos, unirse a comunidades de jugadores, y participar en eventos en línea. La plataforma también ofrece recomendaciones personalizadas basadas en las preferencias y el historial de juego de los usuarios, asegurando que siempre haya algo nuevo y emocionante para descubrir.
+                Virtual Vault cuenta con millones de usuarios registrados y ha facilitado innumerables conexiones entre jugadores de todo el mundo. Además, la plataforma ofrece herramientas y servicios para desarrolladores, permitiéndoles distribuir y gestionar sus juegos de manera eficiente. Virtual Vault proporciona a los desarrolladores análisis detallados, marketing integrado y soporte técnico, ayudándolos a alcanzar una audiencia global.
+                A través de su compromiso con la innovación y la calidad, Virtual Vault se dedica a ofrecer una experiencia de juego excepcional, tanto para jugadores como para desarrolladores, consolidándose como un pilar fundamental en la comunidad de videojuegos.
             
                 <h2 style="margin-top: 2%;">Contacto</h2>
-                <strong>FullPlay, Inc.</strong><br>
+                <strong>Virtual Vault, Inc.</strong><br>
                 620 Crossroads Blvd.<br>
                 Cary, Carolina del Norte, Estados Unidos<br>
                 Telf. +57 888 000 111<br>
                 &nbsp;
                 </div>
         </div>
-    </div>    
 </body>
 </html>

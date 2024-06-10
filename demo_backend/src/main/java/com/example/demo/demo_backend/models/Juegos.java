@@ -33,7 +33,22 @@ public class Juegos {
     private long valoracion;
 
     @Setter
-    @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "desarrollador_id")
-    private Desarrolladores desarrollador_id;
+    @Column(name = "desarrollador_id")
+    private Long desarrollador_id;
+
+    @Setter
+    @Column(name = "fecha_inicio_descuento")
+    private Date fecha_inicio_descuento;
+
+    @Setter
+    @Column(name = "fecha_final_descuento")
+    private Date fecha_final_descuento;
+
+    @Setter
+    @Column(name = "descuento")
+    private long descuento;
+
+    @Setter
+    @Column(name = "precio", nullable = false)
+    private long precio;
 }

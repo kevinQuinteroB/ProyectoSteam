@@ -1,4 +1,3 @@
-import { Pais } from "./pais";
 
 export class Usuario {
     id:number;

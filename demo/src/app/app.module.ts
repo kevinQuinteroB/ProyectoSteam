@@ -11,6 +11,7 @@ import { SoporteComponent } from './soporte/soporte.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     RecuperarcontrasenaComponent,
     NosotrosComponent,
     SoporteComponent,
-    RegistroComponent
+    RegistroComponent,
+    BusquedaComponent
   ],
   imports: [
     BrowserModule,

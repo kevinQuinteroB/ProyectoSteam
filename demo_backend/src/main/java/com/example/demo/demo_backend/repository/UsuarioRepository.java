@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuarios, Long>{
-    @Query("SELECT u.id, u.contrasena, u.email, u.saldo, u.username, u.pais_id FROM Usuarios u WHERE u.email = :email and u.contrasena = :contrasena")
-    Object findByEmail(String email, String contrasena);
+    @Query(value = "SELECT * FROM usuarios WHERE email = :email AND contrasena = :contrasena", nativeQuery = true)
+    Usuarios findByEmail(String email, String contrasena);
 }

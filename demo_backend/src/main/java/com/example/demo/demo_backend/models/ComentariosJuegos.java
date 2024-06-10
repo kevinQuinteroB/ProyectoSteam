@@ -24,14 +24,12 @@ public class ComentariosJuegos {
     private Date fecha;
 
     @Setter
-    @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "usuario_escritor_id")
-    private Usuarios usuario_escritor_id;
+    @Column(name = "usuario_escritor_id")
+    private Long usuario_escritor_id;
 
     @Setter
-    @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name = "juegos_id")
-    private Juegos juegos_id;
+    @Column(name = "juegos_id")
+    private Long juegos_id;
 
 
 }
