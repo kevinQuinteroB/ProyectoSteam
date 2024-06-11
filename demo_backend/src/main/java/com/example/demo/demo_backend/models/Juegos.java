@@ -37,18 +37,14 @@ public class Juegos {
     private Long desarrollador_id;
 
     @Setter
-    @Column(name = "fecha_inicio_descuento")
-    private Date fecha_inicio_descuento;
-
-    @Setter
-    @Column(name = "fecha_final_descuento")
-    private Date fecha_final_descuento;
-
-    @Setter
     @Column(name = "descuento")
     private long descuento;
 
     @Setter
     @Column(name = "precio", nullable = false)
     private long precio;
+
+    @Setter
+    @Column(name = "descripcion", nullable = false)
+    private String descripcion;
 }

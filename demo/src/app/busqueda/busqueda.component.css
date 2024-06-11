@@ -67,3 +67,12 @@ input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   appearance: none;
 }
+.lista-hover li{
+  color: #ccc;
+  padding-top: 2%;
+}
+
+.lista-hover li:hover {
+  background-color: rgb(186, 186, 186);
+  color: rgb(26, 26, 26);
+}
