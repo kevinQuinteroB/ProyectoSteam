@@ -30,6 +30,7 @@ export class BusquedaComponent {
   generos: Genero[];
 
   constructor(private generoService: GeneroService, private usuarioService: UsuarioService, private jugoService: JuegoService, private busquedaService: BusquedaService) {
+  this.genero_id;
   }
 
   isHovered = false;
