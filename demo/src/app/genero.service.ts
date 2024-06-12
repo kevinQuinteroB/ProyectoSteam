@@ -8,11 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class GeneroService {
 
-  private baseURL = "http://localhost:8080/generos/all";
+  private baseURL = "http://localhost:8080/generos";
+
 
   constructor(private httpClient : HttpClient) { }
 
   obtenerGeneros():Observable<Genero[]>{
-    return this.httpClient.get<Genero[]>(`${this.baseURL}`);
+    return this.httpClient.get<Genero[]>(`${this.baseURL}/all`);
   }
+
+
+  obtenerGenero(id_genero: number):Observable<Genero>{
+    return this.httpClient.get<Genero>(`${this.baseURL}/${id_genero}`)
+  }
+
 }

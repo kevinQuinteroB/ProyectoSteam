@@ -7,4 +7,5 @@ export class Juego {
     desarrollador_id: number
     descuento: number
     precio: number
+    descripcion: string
 }

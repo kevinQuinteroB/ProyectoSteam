@@ -1,6 +1,7 @@
 package com.example.demo.demo_backend.services;
 
 import com.example.demo.demo_backend.models.Juegos;
+import com.example.demo.demo_backend.repository.GenerosRepository;
 import com.example.demo.demo_backend.repository.JuegosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

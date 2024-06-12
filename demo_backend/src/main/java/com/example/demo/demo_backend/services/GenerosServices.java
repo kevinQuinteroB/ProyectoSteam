@@ -15,4 +15,8 @@ public class GenerosServices {
     public List<Generos> retunall(){
         return generosRepository.findAll();
     }
+
+    public Generos EncontrarByID(Long id){
+        return generosRepository.EncontrarByID(id);
+    }
 }

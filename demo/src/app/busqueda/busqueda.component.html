@@ -71,9 +71,11 @@
                     <span class="textoEncabezado" style="font-size: 20px; padding: 1%;">RESULTADO DE LA BUSQUEDA</span>
                 </div>
                 <div class="row">
-                    <article >
-                        <img class="imagenesJuegos" style="height:15rem; width: 10rem; padding: 1%;" *ngFor="let portada of juegos" [src]="portada.portada"/>
-                    </article>
+                    <ng-container *ngFor="let juego of juegos">
+                        <div class="col-3" style="padding-top: 2%;">
+                            <img class="imagenesJuegos" style="height:15rem; width: 10rem; padding: 1%;" [src]="juego.portada" (click)="toRedirect(juego)"/>
+                        </div>
+                    </ng-container>
                 </div>
 
                 <div class="row bloqueSeparacion" style="height: 2.5rem;">  

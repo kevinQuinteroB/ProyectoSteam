@@ -1,1 +1,104 @@
-<p>juego works!</p>
+<html lang="es">
+<body style="background-color: rgb(46, 46, 46); height:1000px; width: auto;">
+    <div class="container-fluid">
+        <div class="row Encabezado barraEncabezado" style="padding-top: 1%; padding-bottom: 0.5%;">
+            <div class="col-3" >
+                <a>
+                    <h3 class="textoEncabezado " style=" margin-left: 100px; margin-top: -1%;">{{nombrePag}}</h3>  
+                </a>
+            </div>
+            <div class="col-1">
+                <a href="/tienda">
+                    <h4 class="textoEncabezado textoNav">{{tienda}}</h4>
+                </a>     
+            </div>
+            <div class="col-1">  
+                <a href="/tienda">
+                    <h4 class="textoEncabezado textoNav">{{noticias}}</h4>
+                </a>
+            </div>
+            <div class="col-1">
+                <a href="/soporte">
+                    <h4 class="textoEncabezado textoNav">{{soporte}}</h4>
+                </a>          
+            </div>
+            <div class="col-3">
+                <a href="/nosotros">
+                    <h4 class="textoEncabezado textoNav">{{acerca}}</h4>
+                </a>          
+            </div>
+            <div class="col-3">
+                <div class="dropdown">
+                    <a style="font-size: 20px;" (click)="toggleDropdown()" class="textoEncabezado textoNav nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{USUARIO}}
+                    </a>
+                    <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                      <li><a class="dropdown-item" href="#">perfil</a></li>
+                      <li><a class="dropdown-item" href="#">recargar</a></li>
+                      <li><a class="dropdown-item" href="#">inventario</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">cerrar sesion</a></li>
+                    </ul>
+                  </div>
+                </div>
+        </div> 
+        
+        <div class="row" style="height: 50px; padding: 4%; ">
+            <div class="col-2" style="margin-top: 1%;">
+            </div>
+
+            <div class="col-8" style="background-color: rgb(19, 19, 19); height: fit-content;"> 
+                <div class="row" style="margin-top: 2%; margin-bottom: 2%;">
+                    <div class="col-8"></div>
+                    <div class="col-4"> 
+                    </div> 
+                </div>
+                <div class="row bloqueSeparacion">  
+                    <span class="textoEncabezado" style="height: 2.5rem;padding: 1%;"></span>
+                </div>
+                
+                <div class="row">
+                    <div class="card mb-3" style="width:max-content;; padding: 3%; background-color: transparent;"> 
+                        <div class="row g-0">
+                          <div class="col-md-5">
+                            <img src="{{portada}}" class="img-fluid rounded-start" alt="..." style="height: 25rem; width: auto;">
+                          </div>
+                          <div class="col-md-7">
+                            <div class="card-body" style="color: rgb(255, 255, 255);">
+                              <h5 class="card-title">{{nombre}}</h5>
+                              
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb"> 
+                                    <ng-container *ngFor="let genero of generos">
+                                      <li style="font-size: 12px;" class="breadcrumb-item" aria-current="page">{{ genero.nombre }}</li>
+                                    </ng-container>  
+                                    </ol>
+                                  </nav>
+                                                                                 
+                              <p class="card-text" style="font-size: 12.5px;">{{descripcion}}</p>
+                              <p class="card-text" style="margin-top: -5px;">Fecha de lanzamiento: {{fecha_lanzamiento | date:'longDate'}}</p>
+                              <p class="card-text" style="padding-top: -10px;">Valoracion: {{valoracion}}/5</p>
+                              <p class="card-text" style="padding-top:-10px;">Desarrollador: {{desarrollador_id}}/5</p>
+                              <p class="card-text" style="padding-top: -10px;">precio: {{precio}}USD - Descuento {{descuento}}%</p>
+                              <p class="card-text" style="padding-top: -10px;">Precio final de compra: {{preciofinal}}USD</p>
+                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="row bloqueSeparacion" style="height: 2.5rem;">  
+                    <span class="textoEncabezado" style="font-size: 25px; padding: 1%;"></span>
+                </div>
+                
+            </div>           
+
+            <div class="col-2" style="margin-top: 1%;">   
+                
+            </div>
+        </div>
+        
+    </div>    
+</body>
+</html>

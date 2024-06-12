@@ -1,12 +1,12 @@
 package com.example.demo.demo_backend.controllers;
 
+import com.example.demo.demo_backend.models.Generos;
 import com.example.demo.demo_backend.services.GenerosServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/generos")
@@ -18,5 +18,11 @@ public class GenerosController {
     @GetMapping("/all")
     public ResponseEntity<Object> retunListaPaises(){
         return ResponseEntity.ok(generosServices.retunall());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Generos> retunGenerosJuego(@PathVariable Long id) {
+        Generos generos = generosServices.EncontrarByID(id);
+        return ResponseEntity.ok(generos);
     }
 }

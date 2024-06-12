@@ -6,6 +6,7 @@ import { JuegoService } from '../juego.service';
 import { BusquedaService } from '../busqueda.service';
 import { Genero } from '../genero';
 import { GeneroService } from '../genero.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-busqueda',
@@ -29,11 +30,17 @@ export class BusquedaComponent {
   genero_id: number;
   generos: Genero[];
 
-  constructor(private generoService: GeneroService, private usuarioService: UsuarioService, private jugoService: JuegoService, private busquedaService: BusquedaService) {
+  constructor(private router: Router ,private generoService: GeneroService, private usuarioService: UsuarioService, private juegoService: JuegoService, private busquedaService: BusquedaService) {
   this.genero_id;
   }
 
   isHovered = false;
+
+  toRedirect(juego: Juego){
+    this.router.navigate(['/game']);
+    console.log("redireccion", juego);
+    this.juegoService.setQuery(juego);
+  }
 
   toggleHover() {
     this.isHovered = !this.isHovered;
@@ -41,7 +48,7 @@ export class BusquedaComponent {
   dropdownVisible = false;
 
   consultar(): void{
-    this.jugoService.consultarJuegoCaracter(this.textoBusqueda).subscribe(response => {
+    this.juegoService.consultarJuegoCaracter(this.textoBusqueda).subscribe(response => {
         console.log(this.textoBusqueda);
         console.log('busqueda:', response);
         this.juegos = response; 
@@ -65,7 +72,6 @@ export class BusquedaComponent {
     }
   this.busquedaService.getQuery().subscribe(query => {
     this.textoBusqueda = query;
-    // Realiza la búsqueda o cualquier acción necesaria con la consulta recibida
     this.consultar();
   });
   }
