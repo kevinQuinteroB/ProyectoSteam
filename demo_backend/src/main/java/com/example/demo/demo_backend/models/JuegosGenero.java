@@ -9,17 +9,19 @@ import lombok.Setter;
 @Entity
 @Table(name = "JuegosGenero")
 @NoArgsConstructor
+@Setter
 public class JuegosGenero {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
     private long id;
 
-    @Setter
-    @JoinColumn(name = "id_Juego")
-    private long  id_Juego;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Juego_id")
+    private Juegos juegos;
 
-    @Setter
-    @JoinColumn(name = "id_Genero")
-    private long  id_Genero;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Genero_id")
+    private Generos genero;
+
 }

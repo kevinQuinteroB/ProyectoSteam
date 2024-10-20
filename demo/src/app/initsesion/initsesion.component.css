@@ -1,7 +1,10 @@
-
-.Encabezado{
-    background-color: rgb(0, 0, 0);
+body, html {
+    height: 100%; /* Aseguramos que el body y el html ocupen el 100% de la pantalla */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el scroll */
 }
+
 .carritoCompras {
 width: 40px; 
 height: auto; 
@@ -12,34 +15,55 @@ transition: transform .2s;
 .carritoCompras:hover {
 transform: scale(1.2); /* Ajusta el nivel de zoom */
 }
-.imagenGrande{
-width: 1360px; 
-height: 582px;
-margin: 0;
-padding: 0;
-}
-.botonIngresar{
-width: auto; 
-height: 30px;
-margin-top: 16px;
-padding-top: 0px;
-text-align: center;
-text-size-adjust: 10px;
-}
-.botonRegistrar{
-    width: auto; 
-    height: 30px;
-    margin-top: 16px;
-    padding-top: 0px;
-    text-align: center;
-    text-size-adjust: 10px;
+
+.imagenGrande {
+    width: 100vw; 
+    height: calc(100vh - 50px); 
+    object-fit: cover; 
+    margin: 0;
+    padding: 0;
+    position: relative;
 }
 .texto-clickeable {
-    font-size: 12px;
+    padding: 0;
+    display: block;
+    word-wrap: break-word;
+    width: 110px;
+    font-size: 15px;
     color: rgb(186,186,186);
     text-decoration: underline;
+    line-height: 1.2;
 }
 
 .texto-clickeable:hover {
-    color: rgb(226, 2, 2);
+    color: rgb(2, 162, 226);
+}
+
+.navbar {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    width: 100%;
+}
+.me-2{
+    display: flex;
+    height: 30px;
+    padding: 4px 12px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.registroDesarrollador{
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    color: aliceblue;
+    border-color: rgb(73, 73, 73);
 }

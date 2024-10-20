@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { JuegoComponent } from './juego/juego.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { JuegoComponent } from './juego/juego.component';
     SoporteComponent,
     RegistroComponent,
     BusquedaComponent,
-    JuegoComponent
+    JuegoComponent,
+    PerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,

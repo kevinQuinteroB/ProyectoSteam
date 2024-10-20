@@ -32,6 +32,7 @@ export class InitsesionComponent {
     });
   }
 
+  
   mostrarModalError(): void {
     const modalElement = document.getElementById('exampleModal');
     if (modalElement) {

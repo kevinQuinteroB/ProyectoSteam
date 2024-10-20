@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row Encabezado barraEncabezado">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <h4 class="textoNav tituloTienda">
+                        {{nombrePag}}
+                    </h4>
+
+                    <div class="navbar-nav me-auto">
+                        <a class="nav-link textoNav" href="/tienda">{{tienda}}</a>
+                        <a class="nav-link textoNav" href="/soporte">{{soporte}}</a>
+                        <a class="nav-link textoNav" href="/nosotros">{{acerca}}</a>
+                    </div>
+
+                    <div class="dropdown ms-auto">
+                        <a class="nav-link dropdown-toggle textoNav" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" (click)="toggleDropdown()">
+                            {{USUARIO}}
+                        </a>
+                        <ul id="desplegable" class="dropdown-menu" [class.show]="dropdownVisible">
+                            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container-fluid cuerpo">
+        <div class="bloquePerfil">
+            <div class="perfil">
+                <img class="fotoPerfil" src="https://cdn.pixabay.com/photo/2024/07/22/17/11/elegance-in-profile-8913207_640.png">
+                <div class="infoUsuario">
+                    <div class="NombreUsuario">Nombre Usuario</div>
+                    <div class="datos">Nombre REAL</div>
+                    <div class="datos">Pais</div>
+                    <div class="datos">Edad</div>
+                    <div class="datos">Acerca de mi</div>
+                    <button type="button" class="botonEditar btn btn-success"> Editar perfil </button>
+                    <button type="button" class="botonEliminar btn btn-danger"> Eliminar perfil </button>
+                </div>
+            </div>
+            <div class="separador">
+                Inventario
+            </div>
+            <div class="inventario">
+                juegos
+            </div>
+        </div>
+    </div>
+</body>
+</html>

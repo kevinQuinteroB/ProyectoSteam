@@ -66,7 +66,8 @@ export class RegistroComponent implements OnInit{
       this.contrasena  !== '' &&
       this.firstName !== '' &&
       this.lastName  !== '' &&
-      this.username  !== ''
+      this.username  !== '' &&
+      this.pais_id >= 1
     );
   }
   

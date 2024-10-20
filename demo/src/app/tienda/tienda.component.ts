@@ -18,9 +18,9 @@ export class TiendaComponent {
   soporte = 'Soporte'
   acerca = 'Nosotros'
   destacado = 'Destacado'
-  ofertas = 'Ofertas'
-  eventos = 'Festi Juegos'
-  free = "Juegos Gratuitos"
+  ofertas = 'Otros destacados'
+  eventos = 'Eventos'
+  free = "Dales una oportunidad"
   USUARIO = 'USUARIO'
   usuarioRegistrado: Usuario | null = null;
   textoBusqueda: string = '';

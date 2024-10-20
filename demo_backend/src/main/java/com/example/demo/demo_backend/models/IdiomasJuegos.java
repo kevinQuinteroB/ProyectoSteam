@@ -7,6 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Entity
+@Setter
 @Table(name = "IdiomasJuegos")
 @NoArgsConstructor
 public class IdiomasJuegos {
@@ -15,11 +16,11 @@ public class IdiomasJuegos {
     @Column(name="id")
     private long id;
 
-    @Setter
-    @JoinColumn(name = "id_Juego")
-    private long  id_Juego;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "juego_id")
+    private Juegos juegos;
 
-    @Setter
-    @JoinColumn(name = "id_idioma")
-    private long  id_idioma;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "idioma_id")
+    private Idiomas  idioma;
 }

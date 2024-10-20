@@ -30,6 +30,7 @@ public class Noticias {
     private String descripcion;
 
     @Setter
-    @Column(name = "juego_id")
-    private Long juego_id;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "juego_id")
+    private Juegos juegos;
 }

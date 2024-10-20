@@ -8,6 +8,7 @@ import { SoporteComponent } from './soporte/soporte.component';
 import { RegistroComponent } from './registro/registro.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { JuegoComponent } from './juego/juego.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/login', pathMatch:'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'soporte', component: SoporteComponent},
   { path: 'registro', component: RegistroComponent},
   { path: 'busqueda', component: BusquedaComponent},
-  { path: 'game', component: JuegoComponent}
+  { path: 'game', component: JuegoComponent},
+  { path: 'usuario', component: PerfilUsuarioComponent}
 ];
 
 @NgModule({

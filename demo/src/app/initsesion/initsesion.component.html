@@ -1,56 +1,63 @@
 <html lang="es">
-<body style="background-color: rgb(255, 255, 255);">
-    <div class="container-fluid">
-        <div class="row Encabezado">
-            <div class="col-1" style="padding: 10px;">
-                <a href="./tienda">
-                    <img src="https://i.ibb.co/cLh3zdX/carrito-de-compras.png" class="carritoCompras"/>
-                </a>                   
-            </div>
-            <div class="col-4" style="padding: 10px;">
-                <h3 style="margin-left: 30px; color: rgb(186, 186, 186); margin-top: 2px;">{{nombrePag}}</h3>
-            </div>
-            <div class="col-2" style="margin-top: 16px;">
-                <input type="text" placeholder="{{usuario}}" [(ngModel)]="email">
-            </div>
-            <div class="col-2" style="margin-top: 16px;">  
-                <input type="password" placeholder="{{contrasenatexto}}" [(ngModel)]="contrasena">
-            </div>
-            <div class="col-1">
-                <a>
-                    <button type="button" class="btn btn-secondary botonIngresar" (click)="consulta()">{{ingresar}}</button>
-                </a>          
-            </div>
-            <div class="col-1">
-                <a href="/registro">
-                    <button type="button" class="btn btn-secondary botonRegistrar" style="padding-right: 10px;">{{Regs}}</button>
-                </a>          
-            </div>
-            <div class="col-1">
-                <a href="/recuperarcontrasena" class="texto-clickeable" style="line-height: 0.2;">{{RC}}</a>
-            </div>
-        </div>
-        <div class="row">
-            <img src="https://i.ibb.co/6vmGPVF/Illustration-web-Grande.pngg" class="imagenGrande"/>
-        </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content" style="background-color: rgb(46, 46, 46);">
-                    <div class="modal-header" style="background-color: rgb(46, 46, 46);">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: rgb(255, 255, 255);">Credenciales incorrectas</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body" style="color: rgb(255, 255, 255); background-color: rgb(46, 46, 46);">
-                        Ha ingresado el correo o la contraseña de forma incorrectas!!
-                    </div>
-                    <div class="modal-footer" style="background-color: rgb(46, 46, 46);">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
+<body style="background-color: rgb(255, 255, 255);">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./tienda">
+                <img src="assets/InicioSesion/carrito-de-compras.png" class="carritoCompras" alt="Carrito de Compras"
+                    style="height: 40px;" />
+            </a>
+            <a class="navbar-brand" href="#" style="color: rgb(186, 186, 186);">{{nombrePag}}</a>
+            <div class="d-flex align-items-center ms-auto">
+                <input class="form-control me-2" type="email" placeholder="{{usuario}}" [(ngModel)]="email"
+                    style="max-width: 200px;">
+                <input class="form-control me-2" type="password" placeholder="{{contrasenatexto}}"
+                    [(ngModel)]="contrasena" style="max-width: 200px;">
+                <button class="btn btn-secondary me-2" type="button" (click)="consulta()">{{ingresar}}</button>
+                <a href="/registro" class="btn btn-secondary me-2">{{Regs}}</a>
+                <a href="/recuperarcontrasena" class="btn btn-link texto-clickeable">{{RC}}</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <img src="assets/InicioSesion/Illustration-web-Grande.png" class="imagenGrande" />
+        </div>
+    </div>
+
+    <!-- Modal de error cuando el usuario ingrese mal las credenciales -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: rgb(46, 46, 46);">
+                <div class="modal-header" style="background-color: rgb(46, 46, 46);">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: rgb(255, 255, 255);">Credenciales
+                        incorrectas</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="color: rgb(255, 255, 255); background-color: rgb(46, 46, 46);">
+                    Ha ingresado el correo o la contraseña de forma incorrectas!!
+                </div>
+                <div class="modal-footer" style="background-color: rgb(46, 46, 46);">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-
+    </div>
+    <div>
+        <button type="button" class="btn registroDesarrollador">
+            Registrarme como DESARROLLADOR |
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-code"
+                viewBox="0 0 16 16">
+                <path
+                    d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8z">
+                </path>
+            </svg>
+            
+        </button>
     </div>
 </body>
+
 </html>
