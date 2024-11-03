@@ -24,7 +24,6 @@
 }
 
 .textoNav:hover {
-  /* Color dorado al iluminar */
   color: #ffffff;
   transition: all 0.5s ease;
 }
@@ -83,10 +82,18 @@ input[type="search"]::-webkit-search-cancel-button {
 a {
     text-decoration: none;
     color: inherit;
-    outline: none; /* Eliminar el borde en foco */
+    outline: none; 
   }
 
+/*
 
+Generos
+
+*/
+
+.generos{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
 
 /*
 

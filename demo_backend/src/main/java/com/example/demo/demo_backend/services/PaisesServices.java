@@ -15,4 +15,8 @@ public class PaisesServices {
     public List<Paises> returnAll(){
         return paisesRepository.findAll();
     }
+
+    public Paises findById(Long id){
+        return paisesRepository.findById(id).get();
+    }
 }

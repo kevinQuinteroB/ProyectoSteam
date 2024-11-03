@@ -16,11 +16,11 @@ public class IdiomasJuegos {
     @Column(name="id")
     private long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "juego_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "juego_id", nullable = false, updatable = false, insertable = false)
     private Juegos juegos;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idioma_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idioma_id", nullable = false, updatable = false, insertable = false)
     private Idiomas  idioma;
 }

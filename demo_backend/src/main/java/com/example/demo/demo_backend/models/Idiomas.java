@@ -23,16 +23,4 @@ public class Idiomas {
     @Column(name = "idioma")
     private String idioma;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "idioma", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<IdiomasJuegos> idiomasJuegos = new ArrayList<>();
-
-    public void addIdiomaJuego(IdiomasJuegos idiomasJuego) {
-        idiomasJuegos.add(idiomasJuego);
-        idiomasJuego.setIdioma(this);
-    }
-    public void removeIdiomaJuego(IdiomasJuegos idiomasJuego) {
-        idiomasJuegos.remove(idiomasJuego);
-        idiomasJuego.setIdioma(null);
-    }
 }

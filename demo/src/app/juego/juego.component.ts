@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { UsuarioService } from '../usuario.service';
-import { Usuario } from '../usuario';
-import { JuegoService } from '../juego.service';
-import { BusquedaService } from '../busqueda.service';
-import { GeneroService } from '../genero.service';
-import { Genero } from '../genero';
-import { JuegoGeneroService } from '../juego-genero.service';
-import { JuegoGenero } from '../juego-genero';
+import { UsuarioService } from '../services/usuario.service';
+import { Usuario } from '../models/usuario';
+import { JuegoService } from '../services/juego.service';
+import { BusquedaService } from '../services/busqueda.service';
+import { GeneroService } from '../services/genero.service';
+import { Genero } from '../models/genero';
+import { JuegoGeneroService } from '../services/juego-genero.service';
+import { JuegoGenero } from '../models/juego-genero';
 import { forkJoin } from 'rxjs';
 
 @Component({

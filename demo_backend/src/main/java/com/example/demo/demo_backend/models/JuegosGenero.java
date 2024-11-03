@@ -1,5 +1,6 @@
 package com.example.demo.demo_backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,12 +17,14 @@ public class JuegosGenero {
     @Column(name="id")
     private long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "Juego_id")
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Juego_id", nullable = false, updatable = false, insertable = false)
     private Juegos juegos;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "Genero_id")
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Genero_id", nullable = false, updatable = false, insertable = false)
     private Generos genero;
 
 }

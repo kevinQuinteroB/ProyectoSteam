@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { UsuarioService } from '../usuario.service';
-import { Usuario } from '../usuario';
-import { Juego } from '../juego';
-import { JuegoService } from '../juego.service';
-import { BusquedaService } from '../busqueda.service';
-import { Genero } from '../genero';
-import { GeneroService } from '../genero.service';
+import { UsuarioService } from '../services/usuario.service';
+import { Usuario } from '../models/usuario';
+import { Juego } from '../models/juego';
+import { JuegoService } from '../services/juego.service';
+import { BusquedaService } from '../services/busqueda.service';
+import { Genero } from '../models/genero';
+import { GeneroService } from '../services/genero.service';
 import { Router } from '@angular/router';
 
 @Component({

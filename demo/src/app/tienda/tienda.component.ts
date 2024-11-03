@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { UsuarioService } from '../usuario.service';
-import { Usuario } from '../usuario';
+import { UsuarioService } from '../services/usuario.service';
+import { Usuario } from '../models/usuario';
 import { Router } from '@angular/router';
-import { BusquedaService } from '../busqueda.service';
-import { GeneroService } from '../genero.service';
-import { Genero } from '../genero';
+import { BusquedaService } from '../services/busqueda.service';
+import { GeneroService } from '../services/genero.service';
+import { Genero } from '../models/genero';
 
 @Component({
   selector: 'app-tienda',

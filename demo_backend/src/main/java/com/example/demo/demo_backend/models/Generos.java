@@ -23,16 +23,4 @@ public class Generos {
     @Column(name="nombre", nullable = false, unique = true)
     private String nombre;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "genero", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<JuegosGenero> juegosGeneros = new ArrayList<>();
-
-    public void addJuegoGenero(JuegosGenero juegosGenero) {
-        juegosGeneros.add(juegosGenero);
-        juegosGenero.setGenero(this);
-    }
-    public void removeJuegoGenero(JuegosGenero juegosGenero) {
-        juegosGeneros.remove(juegosGenero);
-        juegosGenero.setGenero(null);
-    }
 }

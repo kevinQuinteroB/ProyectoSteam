@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { JuegoComponent } from './juego/juego.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { RegistroDesarrolladorComponent } from './registro-desarrollador/registro-desarrollador.component';
+import { PerfilDesarrolladorComponent } from './perfil-desarrollador/perfil-desarrollador.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     RegistroComponent,
     BusquedaComponent,
     JuegoComponent,
-    PerfilUsuarioComponent
+    PerfilUsuarioComponent,
+    RegistroDesarrolladorComponent,
+    PerfilDesarrolladorComponent
   ],
   imports: [
     BrowserModule,

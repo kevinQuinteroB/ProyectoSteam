@@ -25,34 +25,24 @@ public class Usuarios {
     @Column(name="username", nullable = false, unique = true)
     private String username;
 
+    @Column(name = "primerNombre", nullable = false)
+    private String primerNombre;
+
+    @Column(name = "primerApellido", nullable = false)
+    private String primerApellido;
+
     @Column(name="email", nullable = false, unique = true)
     private String email;
 
     @Column(name="contrasena", nullable = false)
     private String contrasena;
 
-    @Column(name="saldo", nullable = false)
-    private double saldo;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="pais_id", nullable = false)
-    private Paises pais;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "inventario_id", referencedColumnName = "id")
-    private Inventarios inventario;
+    @Column(name = "telefono")
+    private int telefono;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ComentariosJuegos> comentarios = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="pais_id",nullable = false ,insertable = true ,updatable = true)
+    private Paises pais;
 
-    public void addComentario(ComentariosJuegos comentario) {
-        comentarios.add(comentario);
-        comentario.setUsuario(this);
-    }
-
-    public void removeComentario(ComentariosJuegos comentario) {
-        comentarios.remove(comentario);
-        comentario.setUsuario(null);
-    }
 }

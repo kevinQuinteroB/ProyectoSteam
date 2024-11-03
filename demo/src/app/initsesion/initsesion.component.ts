@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../usuario.service';
+import { UsuarioService } from '../services/usuario.service';
+import { DesarrolladorService } from '../services/desarrollador.service';
 import * as bootstrap from 'bootstrap';
 
 @Component({
@@ -18,19 +19,39 @@ export class InitsesionComponent {
   email: string;
   contrasena: string;
 
-  constructor(private router: Router, private usuarioService: UsuarioService) {}
+  constructor(private router: Router, private usuarioService: UsuarioService, private desarrolladorService: DesarrolladorService) {}
 
   consulta(): void {
-    this.usuarioService.consultarUsuario(this.email, this.contrasena).subscribe(response => {
-      console.log('Usuario registrado:', response);
-      if (response != null) {
-        this.router.navigate(['/tienda']);
-      } else {
-        console.error('Error al autenticar usuario:');
+    this.usuarioService.consultarUsuario(this.email, this.contrasena).subscribe(
+      response => {
+        console.log('Usuario registrado:', response);
+        if (response != null) {
+          this.router.navigate(['/tienda']);
+        } else {
+          this.desarrolladorService.consultarDesarrollador(this.email, this.contrasena).subscribe(
+            desarrollador => {
+              console.log('Desarrollador registrado:', desarrollador);
+              if (desarrollador != null) { // Verifica 'desarrollador'
+                this.router.navigate(['/desarrollador']);
+              } else {
+                console.log("No se encontró ningún usuario o desarrollador con las credenciales");
+                this.mostrarModalError();
+              }
+            },
+            error => {
+              console.error('Error al consultar desarrollador:', error);
+              this.mostrarModalError();
+            }
+          );
+        }
+      },
+      error => {
+        console.error('Error al consultar usuario:', error);
         this.mostrarModalError();
       }
-    });
+    );
   }
+  
 
   
   mostrarModalError(): void {

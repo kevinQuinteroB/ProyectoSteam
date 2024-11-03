@@ -29,11 +29,13 @@ public class ComentariosJuegos {
     @Column(name = "usuario_escritor_id")
     private Long usuario_escritor_id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "juego_id")
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "juego_id", updatable = false, insertable = false)
     private Juegos juego;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "usuario_id")
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id", updatable = false, insertable = false)
     private Usuarios usuario;
 }

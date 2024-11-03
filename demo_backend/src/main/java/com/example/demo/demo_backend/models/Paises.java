@@ -25,16 +25,4 @@ public class Paises {
     @Column(name="nombre")
     private String nombre;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "pais",cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Usuarios> usuarios = new ArrayList<>();
-
-    public void addUsuario(Usuarios usuario) {
-        usuarios.add(usuario);
-        usuario.setPais(this);
-    }
-    public void removeUsuario(Usuarios usuario) {
-        usuarios.remove(usuario);
-        usuario.setPais(null);
-    }
 }

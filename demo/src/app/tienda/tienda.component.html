@@ -38,10 +38,10 @@
     <div class="container-fluid" style="display: flex; gap: 2%; padding: 4%; background-color: rgb(46, 46, 46);">
         <!-- Categorías -->
 
-        <div class="categorias" style="flex: 1; background-color: rgb(26, 26, 26); padding: 2%;">
-            <h4 class="textoEncabezado" style="font-size: 25px;">Categorías</h4>
+        <div class="categorias" style="flex: 1; background-color: rgb(26, 26, 26); padding: 0.5%;">
+            <h4 class="textoEncabezado" style="font-size: 25px; padding: 15px;">Categorías</h4>
             <ul style="padding: 5%;" class="lista-hover">
-                <li type="button" *ngFor="let genero of generos" [ngClass]="{'hovered': isHovered}"
+                <li type="button" class="generos" *ngFor="let genero of generos" [ngClass]="{'hovered': isHovered}"
                     (mouseenter)="toggleHover()" (mouseleave)="toggleHover()">
                     {{genero.nombre}}
                 </li>

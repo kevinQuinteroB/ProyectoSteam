@@ -4,6 +4,8 @@ export class Usuario {
     username:string;
     email:string;
     contrasena:string;
-    saldo:number;
+    telefono:number;
     pais_id:number;
+    primerApellido:string;
+    primerNombre:string;
 }

@@ -1,5 +1,6 @@
 package com.example.demo.demo_backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Setter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import java.util.Date;
 
 @Getter
 @Entity
+@Setter
 @Table(name = "noticias")
 @NoArgsConstructor
 public class Noticias {
@@ -17,20 +19,17 @@ public class Noticias {
     @Column(name = "id")
     private long id;
 
-    @Setter
     @Column(name = "fecha_publicacion", nullable = false)
     private Date fecha_publicacion;
 
-    @Setter
     @Column(name = "titulo", nullable = false)
     private String titulo;
 
-    @Setter
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @Setter
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "juego_id")
+    @JoinColumn(name = "juego_id",nullable = false, insertable = false,updatable = false)
     private Juegos juegos;
 }

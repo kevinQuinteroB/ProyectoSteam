@@ -9,6 +9,8 @@ import { RegistroComponent } from './registro/registro.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { JuegoComponent } from './juego/juego.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { RegistroDesarrolladorComponent } from './registro-desarrollador/registro-desarrollador.component';
+import { PerfilDesarrolladorComponent } from './perfil-desarrollador/perfil-desarrollador.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/login', pathMatch:'full'},
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent},
   { path: 'busqueda', component: BusquedaComponent},
   { path: 'game', component: JuegoComponent},
-  { path: 'usuario', component: PerfilUsuarioComponent}
+  { path: 'usuario', component: PerfilUsuarioComponent},
+  { path: 'registro-desarrollador', component: RegistroDesarrolladorComponent},
+  { path: 'desarrollador', component: PerfilDesarrolladorComponent}
 ];
 
 @NgModule({

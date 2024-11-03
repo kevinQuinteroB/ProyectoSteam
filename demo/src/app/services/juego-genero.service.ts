@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { JuegoGenero } from './juego-genero';
+import { JuegoGenero } from '../models/juego-genero';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
