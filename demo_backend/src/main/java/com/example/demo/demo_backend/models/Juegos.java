@@ -1,6 +1,7 @@
 package com.example.demo.demo_backend.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,21 +31,19 @@ public class Juegos {
     @Column(name="portada", nullable = false, unique = true)
     private String portada;
 
-    @Column(name="valoracion")
-    private long valoracion;
-
-    @Column(name = "descuento")
-    private long descuento;
-
-    @Column(name = "precio", nullable = false)
-    private long precio;
+    @Column(name="link", nullable = false, unique = true)
+    private String link;
 
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="desarrollador", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name="desarrollador", nullable = false)
     private Desarrolladores desarrollador;
 
+    @JsonProperty("desarrollador")
+    public Long getDesarrolladorId() {
+        return desarrollador.getId();
+    }
 }

@@ -2,6 +2,7 @@ package com.example.demo.demo_backend.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -45,4 +46,8 @@ public class Usuarios {
     @JoinColumn(name="pais_id",nullable = false ,insertable = true ,updatable = true)
     private Paises pais;
 
+    @JsonProperty("pais_id")
+    public Long getPaisId() {
+        return pais.getId();
+    }
 }

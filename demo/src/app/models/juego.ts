@@ -3,9 +3,7 @@ export class Juego {
     nombre: string
     fecha_lanzamiento: Date
     portada: string
-    valoracion: number
-    desarrollador_id: number
-    descuento: number
-    precio: number
+    desarrollador: number
     descripcion: string
+    link: string 
 }

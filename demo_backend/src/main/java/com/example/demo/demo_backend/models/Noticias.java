@@ -30,6 +30,6 @@ public class Noticias {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "juego_id",nullable = false, insertable = false,updatable = false)
+    @JoinColumn(name = "juego_id",nullable = false)
     private Juegos juegos;
 }

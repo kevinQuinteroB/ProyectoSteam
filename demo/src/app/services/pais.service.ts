@@ -9,12 +9,16 @@ import { Pais } from '../models/pais';
 export class PaisService {
 
   //Saca los empleados del backend
-  private baseURL = "http://localhost:8080/paises/all";
+  private baseURL = "http://localhost:8080/paises";
 
   constructor(private httpClient : HttpClient) { }
 
   //Obtener los empleados
   obtenerPaises():Observable<Pais[]>{
-    return this.httpClient.get<Pais[]>(`${this.baseURL}`);
+    return this.httpClient.get<Pais[]>(`${this.baseURL}/all`);
+  }
+
+  obtenerPais(id_pais: number):Observable<Pais>{
+    return this.httpClient.get<Pais>(`${this.baseURL}/${id_pais}`)
   }
 }

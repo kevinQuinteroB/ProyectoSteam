@@ -8,6 +8,8 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class DesarrolladoresServices {
     @Autowired
@@ -26,5 +28,9 @@ public class DesarrolladoresServices {
 
     public Desarrolladores findByEmailAndContrasena (String email, String contrasena){
         return desarrolladoresRepository.findByEmailAndContrasena(email, contrasena);
+    }
+
+    public Optional<Desarrolladores> findById(Long id){
+        return desarrolladoresRepository.findById(id);
     }
 }

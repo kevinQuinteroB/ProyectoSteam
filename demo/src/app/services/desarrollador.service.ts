@@ -16,6 +16,10 @@ export class DesarrolladorService {
     return this.httpClient.post(`${this.baseURL}/register`, desarrollador);
   }
 
+  consultarIdDesarrollador(id: number): Observable<Desarrollador>{
+    return this.httpClient.get<Desarrollador>(`${this.baseURL}/id/${id}`)
+  }
+
   consultarDesarrollador(email: string, contrasena: string): Observable<Desarrollador> {
     return this.httpClient.get<Desarrollador>(`${this.baseURL}/login/${email}/${contrasena}`)
       .pipe(

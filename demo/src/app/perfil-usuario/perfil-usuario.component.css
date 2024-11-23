@@ -7,7 +7,6 @@ ENCABEZADO
   }
   
   .textoNav:hover {
-    /* Color dorado al iluminar */
     color: #fcfcfc;
     transition: all 0.5s ease;
   }

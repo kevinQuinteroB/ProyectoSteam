@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { JuegoComponent } from './juego/juego.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { RegistroDesarrolladorComponent } from './registro-desarrollador/registro-desarrollador.component';
 import { PerfilDesarrolladorComponent } from './perfil-desarrollador/perfil-desarrollador.component';
+import { ModalCrearJuegosComponent } from './modal-crear-juegos/modal-crear-juegos.component';
+import { ModalNoticiaComponent } from './modal-noticia/modal-noticia.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +33,16 @@ import { PerfilDesarrolladorComponent } from './perfil-desarrollador/perfil-desa
     JuegoComponent,
     PerfilUsuarioComponent,
     RegistroDesarrolladorComponent,
-    PerfilDesarrolladorComponent
+    PerfilDesarrolladorComponent,
+    ModalCrearJuegosComponent,
+    ModalNoticiaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

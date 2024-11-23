@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface JuegosGeneroRepository extends JpaRepository<JuegosGenero, Long> {
-    @Query(value = "SELECT * FROM juegos_genero j WHERE id_Juego = :id", nativeQuery = true)
+    @Query(value = "SELECT * FROM juegos_genero j WHERE juego_id = :id", nativeQuery = true)
     List<JuegosGenero> EncontrarByID(Long id);
 }

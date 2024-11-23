@@ -83,3 +83,20 @@
   .imagenesJuegos:hover{
     transform: scale(110%);
   }
+
+  .obtenerJuego {
+    display: flex;
+    position: relative;
+    margin: auto 16px 0 16px;
+    margin-bottom: 0;
+    flex-direction: column; 
+    justify-content:center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

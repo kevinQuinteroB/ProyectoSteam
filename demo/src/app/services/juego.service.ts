@@ -9,15 +9,23 @@ import { Juego } from '../models/juego';
 })
 export class JuegoService {
 
-  private baseURL = "http://localhost:8080/juegos/search";
+  private baseURL = "http://localhost:8080/juegos";
   private querySubject: BehaviorSubject<Juego> = new BehaviorSubject<Juego>({} as Juego);
 
   constructor(private httpClient : HttpClient) {}
   juego: Juego;
 
   consultarJuegoCaracter(busqueda: String): Observable<Juego[]>{
-    return this.httpClient.get<Juego[]>(`${this.baseURL}/${busqueda}`);
+    return this.httpClient.get<Juego[]>(`${this.baseURL}/search/${busqueda}`);
   };
+  
+  crearJuego(juego: any):Observable<any>{
+    return this.httpClient.post(`${this.baseURL}/crear`, juego);
+  }
+
+  consultarJuegosDesarrollador(id: number): Observable<Juego[]>{
+    return this.httpClient.get<Juego[]>(`${this.baseURL}/desarrollador/${id}`);
+  }
 
   setQuery(query: Juego): void {
     this.querySubject.next(query);

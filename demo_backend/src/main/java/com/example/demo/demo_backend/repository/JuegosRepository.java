@@ -13,4 +13,5 @@ public interface JuegosRepository extends JpaRepository<Juegos,Long>{
     @Query("SELECT j FROM Juegos j WHERE LOWER(j.nombre) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<Juegos> searchByName(@Param("keyword") String keyword);
 
+    List<Juegos> findByDesarrollador_Id(Long desarrolladorId);
 }

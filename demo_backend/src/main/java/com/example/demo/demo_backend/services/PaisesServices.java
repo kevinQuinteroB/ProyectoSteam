@@ -19,4 +19,8 @@ public class PaisesServices {
     public Paises findById(Long id){
         return paisesRepository.findById(id).get();
     }
+
+    public Paises obtenerNombrePorId(long paisId) {
+        return paisesRepository.findNombreById(paisId);
+    }
 }

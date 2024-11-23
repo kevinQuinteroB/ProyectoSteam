@@ -36,15 +36,20 @@
 
     <div class="container-fluid cuerpo">
         <div class="bloquePerfil">
+
+            <div class="separador">
+                PERFIL USUARIO
+            </div>
+    
+
             <div class="perfil">
                 <img class="fotoPerfil" src="https://cdn.pixabay.com/photo/2024/07/22/17/11/elegance-in-profile-8913207_640.png">
                 <div class="infoUsuario">
                     <div class="NombreUsuario">{{username}}</div>
                     <div class="datos">{{primerNombre}} {{primerApellido}}</div>
-                    <div class="datos">Pais: {{pais_id}}</div>
-                    <div class="datos">Edad: </div>
+                    <div class="datos">Pais: {{NombrePais}}</div>
+                    <div class="datos">correo: {{correo}}</div>
                     <div class="datos">Telefono: {{telefono}}</div>
-                    <div class="datos">Acerca de mi</div>
                     <button type="button" class="botonEditar btn btn-success"> Editar perfil </button>
                     <button type="button" class="botonEliminar btn btn-danger"> Eliminar perfil </button>
                 </div>

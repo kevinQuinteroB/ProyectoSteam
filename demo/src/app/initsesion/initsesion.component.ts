@@ -51,8 +51,13 @@ export class InitsesionComponent {
       }
     );
   }
-  
 
+  ngOnInit(): void {
+    this.borrarLocalStorage();
+  }  
+borrarLocalStorage(): void {
+    localStorage.clear(); 
+  }
   
   mostrarModalError(): void {
     const modalElement = document.getElementById('exampleModal');

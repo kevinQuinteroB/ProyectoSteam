@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from '../services/usuario.service';
 import { Usuario } from '../models/usuario';
+import { PaisService } from '../services/pais.service';
+import { Pais } from '../models/pais';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -19,7 +21,11 @@ export class PerfilUsuarioComponent {
   pais_id: number;
   primerApellido: string;
   primerNombre: string;
+  correo: string;
   usuarioRegistrado: Usuario | null = null;
+
+  pais: Pais;
+  NombrePais: string;
 
   dropdownVisible = false;
 
@@ -27,7 +33,7 @@ export class PerfilUsuarioComponent {
     this.dropdownVisible = !this.dropdownVisible;
   }
 
-  constructor(private usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService, private paisService: PaisService) {
 
   }
 
@@ -41,7 +47,18 @@ export class PerfilUsuarioComponent {
       this.primerApellido = this.usuarioRegistrado.primerApellido;
       this.pais_id = this.usuarioRegistrado.pais_id;
       this.telefono = this.usuarioRegistrado.telefono;
+      this.correo = this.usuarioRegistrado.email
 
+      this.paisService.obtenerPais(this.pais_id).subscribe(
+        (data: Pais) => {
+          this.pais = data;
+          this.NombrePais = this.pais.nombre;
+        },
+        (error) => {
+          console.error('Error al obtener el país', error);
+        }
+      );
+      
     }
   }
 }

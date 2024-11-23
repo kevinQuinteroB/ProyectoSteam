@@ -77,12 +77,12 @@
                                                                                  
                               <p class="card-text" style="font-size: 12.5px;">{{descripcion}}</p>
                               <p class="card-text" style="margin-top: -5px;">Fecha de lanzamiento: {{fecha_lanzamiento | date:'longDate'}}</p>
-                              <p class="card-text" style="padding-top: -10px;">Valoracion: {{valoracion}}/5</p>
-                              <p class="card-text" style="padding-top:-10px;">Desarrollador: {{desarrollador_id}}/5</p>
-                              <p class="card-text" style="padding-top: -10px;">precio: {{precio}}USD - Descuento {{descuento}}%</p>
-                              <p class="card-text" style="padding-top: -10px;">Precio final de compra: {{preciofinal}}USD</p>
-                              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                              <p class="card-text" style="padding-top:-10px;">Desarrollador: {{NombreDesarrollador}}</p>
+                              <div class="mt-auto"> <!-- mt-auto empuja el botón al final -->
+                                <button class="btn btn-secondary w-100 obtenerJuego" (click)="irAlLink()">OBTENER JUEGO</button>
                             </div>
+                            </div>
+                            
                           </div>
                         </div>
                       </div>

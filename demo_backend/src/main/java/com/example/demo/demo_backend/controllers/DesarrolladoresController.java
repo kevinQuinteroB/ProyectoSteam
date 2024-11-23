@@ -1,7 +1,6 @@
 package com.example.demo.demo_backend.controllers;
 
 import com.example.demo.demo_backend.models.Desarrolladores;
-import com.example.demo.demo_backend.models.Usuarios;
 import com.example.demo.demo_backend.services.DesarrolladoresServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/desarrollador")
@@ -47,5 +47,10 @@ public class DesarrolladoresController {
     @GetMapping("/login/{email}/{contrasena}")
     public ResponseEntity<Desarrolladores> login(@PathVariable String email, @PathVariable String contrasena) {
         return ResponseEntity.ok(desarrolladoresServices.findByEmailAndContrasena(email, contrasena));
+    }
+
+    @GetMapping("/id/{id}")
+    public Optional<Desarrolladores> id(@PathVariable Long id) {
+        return desarrolladoresServices.findById(id);
     }
 }
