@@ -1,5 +1,6 @@
 package com.example.demo.demo_backend.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,16 +27,27 @@ public class ComentariosJuegos {
     @Column(name="fecha")
     private Date fecha;
 
-    @Column(name = "usuario_escritor_id")
-    private Long usuario_escritor_id;
-
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "juego_id", updatable = false, insertable = false)
+    @JoinColumn(name = "juego_id")
     private Juegos juego;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "usuario_id", updatable = false, insertable = false)
+    @JoinColumn(name = "usuario_id")
     private Usuarios usuario;
+
+    @JsonProperty("juego_id")
+    public Long getJuegoId() {
+        return juego.getId();
+    }
+
+    @JsonProperty("usuario_id")
+    public Long getUsuarioId() {
+        return usuario.getId();
+    }
+
+    public String getUsuarioNombre() {
+        return this.usuario.getUsername();  // Devuelve el nombre del usuario
+    }
 }

@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { BusquedaService } from '../services/busqueda.service';
 import { GeneroService } from '../services/genero.service';
 import { Genero } from '../models/genero';
+import { Juego } from '../models/juego';
+import { JuegoService } from '../services/juego.service';
 
 @Component({
   selector: 'app-tienda',
@@ -27,13 +29,20 @@ export class TiendaComponent {
   genero_id: number;
   generos: Genero[];
 
+  warzone: Juego;
+
   isHovered = false;
 
   toggleHover() {
     this.isHovered = !this.isHovered;
   }
   
-  constructor(private usuarioService: UsuarioService, private router: Router, private busquedaService: BusquedaService, private generoService: GeneroService) {
+  constructor(
+    private usuarioService: UsuarioService,
+    private router: Router, 
+    private busquedaService: BusquedaService, 
+    private generoService: GeneroService, 
+    private juegoService: JuegoService,) {
     this.genero_id;
   }
 
@@ -43,8 +52,21 @@ export class TiendaComponent {
     this.router.navigate(['/busqueda']);
     this.busquedaService.setQuery(this.textoBusqueda);
   }
+  
+  redirectWarzone(){
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.warzone);
+      this.juegoService.setQuery(this.warzone);
+    
+  }
 
   ngOnInit(): void {
+
+    this.juegoService.consultarJuegoID(602).subscribe(Response =>{
+      this.warzone = Response;
+      console.log(this.warzone)
+    })
+
     this.generoService.obtenerGeneros().subscribe(generos =>{
       this.generos = generos;
     })

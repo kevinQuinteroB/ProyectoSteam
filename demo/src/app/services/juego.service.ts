@@ -27,6 +27,10 @@ export class JuegoService {
     return this.httpClient.get<Juego[]>(`${this.baseURL}/desarrollador/${id}`);
   }
 
+  consultarJuegoID(id: number):Observable<Juego>{
+    return this.httpClient.get<Juego>(`${this.baseURL}/${id}`);
+  }
+
   setQuery(query: Juego): void {
     this.querySubject.next(query);
     console.log(query)

@@ -36,8 +36,6 @@
                 <div class="datos">Fecha de fundacion: {{fundacion}}</div>
                 <div class="datos">Pais: {{NombrePais}}</div>
                 <div class="datos">Contacto: {{email}}</div>
-                <button type="button" class="botonEditar btn btn-success"> Editar perfil </button>
-                <button type="button" class="botonEliminar btn btn-danger"> Eliminar perfil </button>
             </div>
         </div>
 
@@ -50,11 +48,11 @@
             
             <ng-container *ngFor="let juego of juegos">
                 <div class="juegos">
-                    <h5 class="tituloJuego">{{juego.nombre.toUpperCase()}}</h5>
+                    <h6 class="tituloJuego">{{juego.nombre.toUpperCase()}}</h6>
                     <div class="botones">
                         <button type="button" class="btn btn-outline-primary" (click)="consultarNoticiaJuego(juego.id)">Noticias</button>
                         <button type="button" class="btn btn-outline-secondary" (click)="openCreateNoticaDialog(juego.id)">Agregar Noticia</button>
-                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                        <button type="button" class="btn btn-outline-danger" (click)="consultarComentariosJuego(juego.id)" >Comentarios</button>
                     </div>
                 </div>
             </ng-container>
@@ -79,6 +77,25 @@
         <div class="separador">
             Comentarios de mis juegos
         </div>
+
+        <div class="Contenedorjuegos" style="margin-bottom: 15px;">
+            <ng-container *ngFor="let comenta of comentarios">
+                <div class="cometario">
+                    <div class="escrito-comentario">
+                        <div  class="persona">
+                            <p>{{comenta.usuarioNombre}}</p>
+                        </div>
+                        <div  class="persona">
+                            <p>{{comenta.fecha | date: 'yyyy/MM/dd'}}</p>
+                        </div>
+                    </div>
+                    <div class="comentario">
+                        <p>{{comenta.descripcion}}</p>
+                    </div>
+                </div>                       
+            </ng-container>
+        </div>
+        
     </div>
 </div>
 

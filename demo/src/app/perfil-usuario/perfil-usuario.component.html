@@ -50,15 +50,20 @@
                     <div class="datos">Pais: {{NombrePais}}</div>
                     <div class="datos">correo: {{correo}}</div>
                     <div class="datos">Telefono: {{telefono}}</div>
-                    <button type="button" class="botonEditar btn btn-success"> Editar perfil </button>
-                    <button type="button" class="botonEliminar btn btn-danger"> Eliminar perfil </button>
                 </div>
             </div>
             <div class="separador">
                 Inventario
             </div>
             <div class="inventario">
-                juegos
+                <ng-container *ngFor="let juego of juegosNombres">
+                    <div class="juegos">
+                        <h5 class="tituloJuego">{{juego.nombre}}</h5>
+                        <div class="botones">
+                            <button type="button" class="btn btn-outline-danger" (click)="toRedirect(juego)">Ir</button>
+                        </div>
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>

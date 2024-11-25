@@ -144,3 +144,45 @@ ENCABEZADO
     background-color: rgb(24, 24, 24);
     width: 90%;
   }
+
+  /*
+  Lista Juegos
+*/
+
+.Contenedorjuegos{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: rgb(19, 19, 19);
+  margin-top: 30px;
+  width: 90%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.juegos{
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.tituloJuego{
+  position: relative;
+  display: flex;
+  top: 5px;
+  color: #fcfcfc;
+}
+
+.botones{
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.botones button {
+  margin-right: 5px; 
+}

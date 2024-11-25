@@ -36,4 +36,8 @@ public class JuegosServices {
     public void eliminarJuego(Long id) {
         juegosRepository.deleteById(id);
     }
+
+    public Juegos obtenerJuegoPorId(Long id) {
+        return juegosRepository.findById(id).orElse(null);
+    }
 }

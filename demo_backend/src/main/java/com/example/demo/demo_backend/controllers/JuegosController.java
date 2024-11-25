@@ -54,6 +54,11 @@ public class JuegosController{
     public List<Juegos> obtenerJuegosPorDesarrollador(@PathVariable Long id) {
         return juegosService.obtenerJuegosPorDesarrollador(id);
     }
+
+    @GetMapping("/{id}")
+    public Juegos obtenerJuegoPorId(@PathVariable Long id) {
+        return juegosService.obtenerJuegoPorId(id);
+    }
     
     @DeleteMapping("/eliminar/{id}")
     public void eliminar(@PathVariable Long id) {

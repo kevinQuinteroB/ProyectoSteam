@@ -155,10 +155,13 @@
 }
 
 .tituloJuego{
+    width: 35%;
     position: relative;
     display: flex;
     top: 5px;
     color: #fcfcfc;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .botones{
@@ -185,3 +188,67 @@ DESCRIPCION NOTICIA
     flex-wrap: wrap; /* Asegura que los elementos se envuelvan en caso necesario */
     word-wrap: break-word; /* Permite que las palabras largas se dividan si es necesario */
 }
+
+
+/*
+ COMENTARIOS
+ */
+
+ .comentarios{
+    height: 100%;
+    display: flex;
+    position: relative;
+    padding-bottom: 15px;
+    flex-direction: column;
+   }
+  
+   .btn-comentario{
+    width: 100%;
+   }
+   .comentario-text{
+    height: 100px;             
+    width: 100%;               
+    margin-bottom: 10px;      
+    overflow-y: hidden;          
+    resize: vertical;          
+    padding: 10px;             
+    background-color: #333;    
+    color: #fff;               
+    border: 1px solid #ccc;    
+    border-radius: 5px;        
+    resize: none; 
+   }
+  
+   .cometario{
+    margin-top: 25px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+   }
+  
+   .escrito-comentario {
+    text-align: center;
+    justify-content: center;
+    color: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    margin-right: 15px;
+    min-width: 117.54px; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+  }
+  
+  .persona, .fecha {
+    margin-bottom: 5px; /* Opcional: espacio entre cada línea */
+  }
+  
+  .comentario {
+    flex-grow: 1; /* Hace que el contenido del comentario ocupe el espacio restante */
+    text-align: left; /* Alineación del texto (opcional) */
+    padding: 10px; /* Espacio interno (opcional) */
+    background-color: #333; /* Fondo opcional para el comentario */
+    color: #fff; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    word-wrap: break-word; /* Permite que el texto se ajuste a nuevas líneas cuando se necesite */
+    overflow-wrap: break-word; /* Asegura que el texto largo se divida en la siguiente línea */
+    white-space: normal; /* Asegura que el texto no esté en una sola línea */
+  }

@@ -7,6 +7,8 @@ import { Desarrollador } from '../models/desarrollador';
 import { Juego } from '../models/juego';
 import { NoticiasService } from '../services/noticias.service';
 import { Noticias } from '../models/noticias';
+import { Comentario } from '../models/comentario';
+import { ComentarioService } from '../services/comentario.service';
 
 @Component({
   selector: 'app-perfil-desarrollador',
@@ -37,10 +39,13 @@ export class PerfilDesarrolladorComponent {
   juego_id: number;
   noticia_id: number;
 
+  comentarios: Comentario[]
+
   constructor(private desarrolladorService: DesarrolladorService,
      private paisService: PaisService,
       private juegoService: JuegoService,
-      private noticiasService: NoticiasService
+      private noticiasService: NoticiasService, 
+      private comentarioService: ComentarioService
     ){}
 
   ngOnInit(): void {
@@ -104,6 +109,14 @@ export class PerfilDesarrolladorComponent {
     this.dropdownVisible = !this.dropdownVisible;
   }
 
+  consultarComentariosJuego(juego_id: number){
+    this.juego_id = juego_id;
+    this.comentarioService.consultarComentariosJuego(this.juego_id).subscribe(Response => {
+      this.comentarios = Response;
+      console.log(Response)
+    })
+  }
+
   consultarNoticiaJuego(juego_id: number){
     this.juego_id = juego_id;
   
@@ -153,4 +166,6 @@ export class PerfilDesarrolladorComponent {
       this.consultarNoticiaJuego(this.juego_id);
     })
   }
+
+  
 }
