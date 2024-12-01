@@ -1,7 +1,8 @@
 package com.example.demo.demo_backend.controllers;
 
 import com.example.demo.demo_backend.models.Desarrolladores;
-import com.example.demo.demo_backend.services.DesarrolladoresServices;
+import com.example.demo.demo_backend.services.impl.DesarrolladorServiceImpl;
+import com.example.demo.demo_backend.services.interfaces.DesarrolladorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +17,8 @@ import java.util.Optional;
 @RequestMapping("/desarrollador")
 @CrossOrigin(origins = "http://localhost:4200")
 public class DesarrolladoresController {
-    @Autowired
-    private DesarrolladoresServices desarrolladoresServices;
+
+    private DesarrolladorService desarrolladorService;
 
     @PostMapping("/register")
     public ResponseEntity<Desarrolladores> register(@RequestBody Map<String, Object> desarrolladorData) {
@@ -39,18 +40,23 @@ public class DesarrolladoresController {
         }
 
         Long paisId = Long.valueOf((Integer) desarrolladorData.get("pais_id"));
-        Desarrolladores newDesarrollador = desarrolladoresServices.saveDesarrollador(Desarrollador, paisId);
+        Desarrolladores newDesarrollador = desarrolladorService.saveDesarrollador(Desarrollador, paisId);
 
         return ResponseEntity.ok(newDesarrollador);
     }
 
     @GetMapping("/login/{email}/{contrasena}")
     public ResponseEntity<Desarrolladores> login(@PathVariable String email, @PathVariable String contrasena) {
-        return ResponseEntity.ok(desarrolladoresServices.findByEmailAndContrasena(email, contrasena));
+        return ResponseEntity.ok(desarrolladorService.findByEmailAndContrasena(email, contrasena));
     }
 
     @GetMapping("/id/{id}")
     public Optional<Desarrolladores> id(@PathVariable Long id) {
-        return desarrolladoresServices.findById(id);
+        return desarrolladorService.findById(id);
+    }
+
+    @Autowired
+    public void setDesarrolladorService(DesarrolladorService desarrolladorService) {
+        this.desarrolladorService = desarrolladorService;
     }
 }

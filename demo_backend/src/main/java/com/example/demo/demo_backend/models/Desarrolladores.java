@@ -4,9 +4,7 @@ package com.example.demo.demo_backend.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
@@ -15,6 +13,9 @@ import java.util.Date;
 @Setter
 @Table(name = "desarrolladores")
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Desarrolladores {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,7 +1,8 @@
 package com.example.demo.demo_backend.controllers;
 
 import com.example.demo.demo_backend.models.Juegos;
-import com.example.demo.demo_backend.services.JuegosServices;
+import com.example.demo.demo_backend.services.impl.JuegoServiceImpl;
+import com.example.demo.demo_backend.services.interfaces.JuegoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,12 +17,12 @@ import java.util.Map;
 @RequestMapping("/juegos")
 @CrossOrigin(origins = "http://localhost:4200")
 public class JuegosController{
-    @Autowired
-    private JuegosServices juegosService;
+
+    private JuegoService juegoService;
 
     @GetMapping("/search/{keyword}")
     public ResponseEntity<List<Juegos>> searchByName(@PathVariable String keyword) {
-        List<Juegos> juegos = juegosService.searchByName(keyword);
+        List<Juegos> juegos = juegoService.searchByName(keyword);
         return ResponseEntity.ok(juegos);
     }
 
@@ -45,23 +46,28 @@ public class JuegosController{
         }
 
         Long desarrollador = Long.valueOf((Integer) juegoData.get("desarrollador"));
-        Juegos newJuego = juegosService.create(juego, desarrollador);
+        Juegos newJuego = juegoService.create(juego, desarrollador);
 
         return ResponseEntity.ok(newJuego);
     }
 
     @GetMapping("/desarrollador/{id}")
     public List<Juegos> obtenerJuegosPorDesarrollador(@PathVariable Long id) {
-        return juegosService.obtenerJuegosPorDesarrollador(id);
+        return juegoService.obtenerJuegosPorDesarrollador(id);
     }
 
     @GetMapping("/{id}")
     public Juegos obtenerJuegoPorId(@PathVariable Long id) {
-        return juegosService.obtenerJuegoPorId(id);
+        return juegoService.obtenerJuegoPorId(id);
     }
     
     @DeleteMapping("/eliminar/{id}")
     public void eliminar(@PathVariable Long id) {
-        juegosService.eliminarJuego(id);
+        juegoService.eliminarJuego(id);
+    }
+
+    @Autowired
+    public void setJuegoService(JuegoService juegoService) {
+        this.juegoService = juegoService;
     }
 }

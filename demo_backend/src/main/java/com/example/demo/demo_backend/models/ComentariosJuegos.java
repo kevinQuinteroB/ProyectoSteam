@@ -2,9 +2,7 @@ package com.example.demo.demo_backend.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -15,6 +13,9 @@ import java.util.List;
 @Entity
 @Table(name = "ComentariosJuegos")
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@EqualsAndHashCode(of = "id")
 public class ComentariosJuegos {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
