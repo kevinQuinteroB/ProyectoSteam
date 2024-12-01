@@ -2,9 +2,7 @@ package com.example.demo.demo_backend.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +12,8 @@ import java.util.List;
 @Table(name="generos")
 @NoArgsConstructor
 @Setter
+@AllArgsConstructor
+@Builder
 public class Generos {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
