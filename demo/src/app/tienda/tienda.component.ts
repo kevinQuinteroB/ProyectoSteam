@@ -29,45 +29,139 @@ export class TiendaComponent {
   genero_id: number;
   generos: Genero[];
 
-  warzone: Juego;
+  juego: Juego;
 
   isHovered = false;
 
   toggleHover() {
     this.isHovered = !this.isHovered;
   }
-  
+
   constructor(
     private usuarioService: UsuarioService,
-    private router: Router, 
-    private busquedaService: BusquedaService, 
-    private generoService: GeneroService, 
+    private router: Router,
+    private busquedaService: BusquedaService,
+    private generoService: GeneroService,
     private juegoService: JuegoService,) {
     this.genero_id;
   }
 
   dropdownVisible = false;
 
-  consultar(){
+  consultar() {
     this.router.navigate(['/busqueda']);
     this.busquedaService.setQuery(this.textoBusqueda);
   }
-  
-  redirectWarzone(){
+  redirectrocket(){
+    this.juegoService.consultarJuegoID(662).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
       this.router.navigate(['/game']);
-      console.log("redireccion", this.warzone);
-      this.juegoService.setQuery(this.warzone);
-    
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+  }
+  redirectfornite(){
+    this.juegoService.consultarJuegoID(661).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+  }
+  redirectpubg(){
+    this.juegoService.consultarJuegoID(660).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+  }
+  redirectcs(){
+    this.juegoService.consultarJuegoID(659).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+  }
+  redirectdota(){
+    this.juegoService.consultarJuegoID(656).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+  }
+  redirectover() {
+    this.juegoService.consultarJuegoID(655).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+  }
+  redirectapex() {
+    this.juegoService.consultarJuegoID(654).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+  }
+
+  redirectlol() {
+    this.juegoService.consultarJuegoID(653).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+  }
+  
+
+  redirectWarzone() {
+    this.juegoService.consultarJuegoID(602).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+  }
+
+  redirectValorant() {
+    this.juegoService.consultarJuegoID(652).subscribe(Response => {
+      this.juego = Response;
+      console.log(this.juego)
+
+      this.router.navigate(['/game']);
+      console.log("redireccion", this.juego);
+      this.juegoService.setQuery(this.juego);
+    })
+
+
   }
 
   ngOnInit(): void {
 
-    this.juegoService.consultarJuegoID(602).subscribe(Response =>{
-      this.warzone = Response;
-      console.log(this.warzone)
-    })
-
-    this.generoService.obtenerGeneros().subscribe(generos =>{
+    this.generoService.obtenerGeneros().subscribe(generos => {
       this.generos = generos;
     })
     this.usuarioRegistrado = this.usuarioService.getUsuarioRegistrado();
@@ -77,7 +171,7 @@ export class TiendaComponent {
       console.log(this.usuarioRegistrado.username);
     }
   }
-  
+
   toggleDropdown() {
     this.dropdownVisible = !this.dropdownVisible;
   }

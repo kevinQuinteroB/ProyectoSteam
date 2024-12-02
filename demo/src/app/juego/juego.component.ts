@@ -108,6 +108,7 @@ export class JuegoComponent {
         this.juegoObtenido = "Ir al sitio web"
       } else {
         this.juegoComprado = false;
+        this.juegoObtenido = "Obtener"
       }
     })
 
